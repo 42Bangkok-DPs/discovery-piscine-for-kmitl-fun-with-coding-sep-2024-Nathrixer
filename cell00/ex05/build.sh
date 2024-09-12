@@ -14,3 +14,4 @@ do
         echo "Created directory $folder"
     fi
 done
+ls -l
