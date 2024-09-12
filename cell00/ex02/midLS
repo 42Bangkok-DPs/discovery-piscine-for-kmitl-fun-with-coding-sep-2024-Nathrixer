@@ -1,2 +1,1 @@
-bash midLS
-ls -p | grep -v '/$' | grep -v '^\.' | paste -sd ',' -
+ls -p | grep -v '^\.\{1,2\}$' | paste -sd "," -
