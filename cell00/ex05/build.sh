@@ -11,7 +11,6 @@ do
         echo "Directory $folder already exists"
     else
         mkdir "$folder"
-        echo "Created directory $folder"
     fi
+    echo "$(ls -ld "$folder")"
 done
-ls -l
