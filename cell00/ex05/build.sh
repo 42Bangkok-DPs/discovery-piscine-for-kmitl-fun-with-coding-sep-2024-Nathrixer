@@ -12,7 +12,7 @@ do
         echo "Directory $folder already exists"
     else
         mkdir "$folder"
-        echo "ls -1"
+        echo "Created directory $folder"
     fi
 
     ls -ld "$folder"
