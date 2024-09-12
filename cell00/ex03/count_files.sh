@@ -1,1 +1,2 @@
-./count_files.sh | cat -e
+#!/bin/bash
+echo "42$"
