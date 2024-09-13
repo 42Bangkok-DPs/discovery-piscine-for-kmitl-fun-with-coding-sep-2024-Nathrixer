@@ -1,1 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
+.card-container {
+    position: relative;
+}
+
+.name {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    color: #333;
+}
+
+.card {
+    width: 300px;
+    background-color: #fff;
+    padding: 30px;
+    padding-top: 150px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border-radius: 10px;
+}
+
+.profile-pic img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-top: -115px;
+    border: 20px solid #fff;
+}
+
+.bold-text {
+    margin-top: 10px;
+}
+
+.bold-text p {
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+}
+
+.usage-time {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+.description {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #777;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+.button {
+    margin-top: 25px;
+    padding: 10px 20px;
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #357ae8;
+}
