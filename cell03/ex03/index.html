@@ -6,32 +6,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDoList</title>
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #todo-container {
+            text-align: center;
+        }
+
         #ft_list {
             margin-top: 20px;
             padding: 10px;
-            border: 1px solid black;
+            border: 1px solid #ccc;
             width: 300px;
             min-height: 150px;
             background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
         }
 
         .todo-item {
             background-color: #e0e0e0;
-            padding: 5px;
+            padding: 10px;
             margin: 5px 0;
+            width: 90%;
+            text-align: left;
             cursor: pointer;
+            border-radius: 5px;
         }
 
         button {
-            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <h1>To-Do List</h1>
-    <button id="new-todo">New</button>
-    <div id="ft_list"></div>
+    <div id="todo-container">
+        <h1>To-Do List</h1>
+        <button id="new-todo">New</button>
+        <div id="ft_list"></div>
+    </div>
 
-    <script src="todo.js"></script>
+    <script>
+        document.getElementById('new-todo').addEventListener('click', function() {
+            let todoText = prompt('Enter a new to-do item:');
+            if (todoText) {
+                let newTodo = document.createElement('div');
+                newTodo.className = 'todo-item';
+                newTodo.textContent = todoText;
+
+                // Remove the item when clicked
+                newTodo.addEventListener('click', function() {
+                    if (confirm('Do you want to remove this item?')) {
+                        this.remove();
+                    }
+                });
+
+                // Add the new item to the list
+                document.getElementById('ft_list').appendChild(newTodo);
+            }
+        });
+    </script>
 </body>
 </html>
