@@ -1,1 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
 
+        .cell1 h1 {
+            font-size: 10em;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        img {
+            width: 500px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        hr {
+            border: 0;
+            height: 2px;
+            background-color: #ccc;
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            max-width: 800px;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        td {
+            border: 1px solid black;
+            padding: 20px;
+            text-align: center;
+        }
+        .box1 {
+            background-color: green;
+        }
+        .box2 {
+            background-color: purple;
+        }
+
+        @media (max-width: 600px) {
+            table, tbody, td, tr {
+                display: block;
+                width: 100%;
+            }
+
+            td {
+                box-sizing: border-box;
+                display: block;
+                width: 100%;
+            }
+
+            .image-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        body.pink-bg {
+            background-color: pink;
+        }
+        .copyright {
+            text-align: right;
+            font-style: italic;
+            margin-right: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="pink-bg">
+    <div class="cell1">
+        <h1>Piscine Web</h1>
+    </div>
+
+    <div class="image-container">
+        <a href="https://www.youtube.com/watch?v=INscMGmhmX4" target="_blank">
+            <img src="https://img.freepik.com/free-photo/digital-art-beautiful-mountains_23-2151123686.jpg" alt="Image 1">
+        </a>
+        <hr>
+        <a href="https://img.freepik.com/free-photo/sunset-silhouettes-trees-mountains-generative-ai_169016-29371.jpg" target="_blank">
+            <img src="https://img.freepik.com/free-photo/sunset-silhouettes-trees-mountains-generative-ai_169016-29371.jpg" alt="Image 2">
+        </a>
+    </div>
+
+    <table>
+        <tr>
+            <td class="box1">Hello</td>
+            <td class="box2">World</td>
+        </tr>
+    </table>
+
+    <div class="copyright">
+        &copy; RATTAPHUM 2024
+    </div>
+</body>
+</html>
