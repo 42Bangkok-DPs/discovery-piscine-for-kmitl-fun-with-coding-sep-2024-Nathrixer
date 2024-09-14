@@ -85,15 +85,15 @@
             const rightOperand = $('#rightOperand').val();
 
             if (!$.isNumeric(leftOperand) || !$.isNumeric(rightOperand)) {
-                alert('Error: Please enter valid numbers only');
-                console.log('Error: Invalid input');
+                alert('"Error :("');
+                console.log('"Error :("');
                 return;
             }
             const num1 = parseFloat(leftOperand);
             const num2 = parseFloat(rightOperand);
             if (num1 < 0 || num2 < 0) {
-                alert('Error: Negative numbers are not allowed');
-                console.log('Error: Negative numbers are not allowed');
+                alert('"Error :("');
+                console.log('"Error :("');
                 return;
             }
             let result;
@@ -120,8 +120,8 @@
                     result = num1 % num2;
                     break;
                 default:
-                    alert('Error: Invalid operator');
-                    console.log('Error: Invalid operator');
+                    alert('"Error :("');
+                    console.log('"Error :("');
                     return;
             }
 
