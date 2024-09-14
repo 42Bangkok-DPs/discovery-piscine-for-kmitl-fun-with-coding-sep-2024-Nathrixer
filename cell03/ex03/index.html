@@ -76,15 +76,12 @@
                 let newTodo = document.createElement('div');
                 newTodo.className = 'todo-item';
                 newTodo.textContent = todoText;
-
-                // Remove the item when clicked
                 newTodo.addEventListener('click', function() {
                     if (confirm('Do you want to remove this item?')) {
                         this.remove();
                     }
                 });
-
-                // Add the new item to the list
+                
                 document.getElementById('ft_list').appendChild(newTodo);
             }
         });
