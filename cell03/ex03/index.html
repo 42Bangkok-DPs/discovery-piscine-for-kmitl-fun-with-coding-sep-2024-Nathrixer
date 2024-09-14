@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDoList</title>
     <style>
@@ -12,15 +12,20 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
+            background-color: #eceff1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         h1 {
-            text-align: center;
+            margin-bottom: 20px;
         }
 
         #todo-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
             text-align: center;
         }
 
@@ -28,23 +33,32 @@
             margin-top: 20px;
             padding: 10px;
             border: 1px solid #ccc;
-            width: 300px;
+            border-radius: 5px;
+            width: 100%;
             min-height: 150px;
-            background-color: #f9f9f9;
+            background-color: #fafafa;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
+            overflow-y: auto;
+            max-height: 300px;
         }
 
         .todo-item {
-            background-color: #e0e0e0;
+            background-color: #e0f7fa;
             padding: 10px;
             margin: 5px 0;
-            width: 90%;
+            width: 95%;
             text-align: left;
             cursor: pointer;
             border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .todo-item:hover {
+            background-color: #b2ebf2;
         }
 
         button {
@@ -55,6 +69,7 @@
             font-size: 16px;
             cursor: pointer;
             border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
         button:hover {
@@ -69,22 +84,7 @@
         <div id="ft_list"></div>
     </div>
 
-    <script>
-        document.getElementById('new-todo').addEventListener('click', function() {
-            let todoText = prompt('Enter a new to-do item:');
-            if (todoText) {
-                let newTodo = document.createElement('div');
-                newTodo.className = 'todo-item';
-                newTodo.textContent = todoText;
-                newTodo.addEventListener('click', function() {
-                    if (confirm('Do you want to remove this item?')) {
-                        this.remove();
-                    }
-                });
-                
-                document.getElementById('ft_list').appendChild(newTodo);
-            }
-        });
-    </script>
+    <!-- Link to external JavaScript file -->
+    <script src="todo.js"></script>
 </body>
 </html>
