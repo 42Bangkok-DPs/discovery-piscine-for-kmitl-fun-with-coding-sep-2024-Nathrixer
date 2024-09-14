@@ -1,4 +1,4 @@
-function addTodoItem(todoText) {
+function addTodoItem(todoText, save = true) {
     if (todoText.trim() === "") return;
 
     const todoItem = document.createElement('div');
@@ -13,9 +13,11 @@ function addTodoItem(todoText) {
     });
 
     const list = document.getElementById('ft_list');
-    list.insertBefore(todoItem, list.firstChild);
+    list.appendChild(todoItem);
 
-    saveTodos();
+    if (save) {
+        saveTodos();
+    }
 }
 
 document.getElementById('new-todo').addEventListener('click', function() {
@@ -32,8 +34,12 @@ function saveTodos() {
     for (let i = 0; i < list.children.length; i++) {
         todos.push(list.children[i].textContent);
     }
+
+    const date = new Date();
+    date.setTime(date.getTime() + (20 * 365 * 24 * 60 * 60 * 1000)); // ตั้งให้คุกกี้มีอายุ 20 ปี
+    const expires = "; expires=" + date.toUTCString();
     
-    document.cookie = "todos=" + JSON.stringify(todos) + "; path=/";
+    document.cookie = "todos=" + JSON.stringify(todos) + expires + "; path=/";
 }
 
 function loadTodos() {
@@ -43,7 +49,7 @@ function loadTodos() {
         if (cookie.startsWith("todos=")) {
             const todoList = JSON.parse(cookie.substring("todos=".length));
             todoList.forEach(function(todoText) {
-                addTodoItem(todoText);
+                addTodoItem(todoText, false);
             });
         }
     }
