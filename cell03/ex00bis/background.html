@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
+        .container {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Click the button to change the background color</h1>
+        <button id="colorButton">Change Background Color</button>
+    </div>
+
+    <script>
+        $('#colorButton').click(function() {
+            const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#FF8C33'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            $('body').css('background-color', randomColor);
+        });
+    </script>
+</body>
+</html>
